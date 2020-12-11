@@ -1,4 +1,4 @@
-import React , {useState} from 'react';
+import React , { useState , useRef} from 'react';
 import Try from './BaseballTryinfo';
 
 
@@ -17,6 +17,9 @@ const Baseball = () => {
     const [result, setResult] = useState("");   //정답
     const [answer, setAnswer] = useState(getNumbers());
     const [tries, setTries] = useState([]);
+    const inputCursor = useRef(null);
+
+    
     
     const onChangeInput = (e) => {
         setValue(e.target.value);
@@ -33,6 +36,7 @@ const Baseball = () => {
             setValue('');
             setAnswer(getNumbers());
             setTries([]);
+            inputCursor.current.focus()
         }else{
             const answerArray = value.split('').map( (v) => { return parseInt(v)})
             let strike = 0;
@@ -43,6 +47,8 @@ const Baseball = () => {
                 setValue('');
                 setAnswer(getNumbers());
                 setTries([]);
+                inputCursor.current.focus()
+
             }else{
                 for(let i=0; i<4; i++){
                     if(answerArray[i] === answer[i]){
@@ -55,6 +61,7 @@ const Baseball = () => {
                    [ ...prevTries, {try: value, result: `${strike}스트라이크 ${ball}볼`}]
                 )
                 setValue('');
+                inputCursor.current.focus();
             }
         }
     };
@@ -62,7 +69,7 @@ const Baseball = () => {
         <div>
             <div>{result}</div>
             <form onSubmit={onSubmitForm}>
-                <input maxLength={4} value={value} onChange={onChangeInput} />
+                <input maxLength={4} value={value} onChange={onChangeInput} ref={inputCursor}/>
                 <button>입력</button>
             </form>
             <div>시도 : {} </div>
