@@ -72,7 +72,7 @@ const Baseball = () => {
                 <input maxLength={4} value={value} onChange={onChangeInput} ref={inputCursor}/>
                 <button>입력</button>
             </form>
-            <div>시도 : {} </div>
+            <div>시도 : {tries.length} </div>
             <ul>
                 {tries.map( (v,i) => {
                     return (

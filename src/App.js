@@ -6,12 +6,13 @@ import './components/RSP.css'
 // import WordRelay from './components/WordRelay'
 // import Baseball from './components/Baseball'
 // import ResponseCheck from './components/ResponseCheck'
-import RSP from './components/RSP'
+// import RSP from './components/RSP'
+import Lotto from './components/Lotto'
 
 function App() {
   return (
     <div >
-      <RSP/>
+      <Lotto/>
 
     </div>
   );
