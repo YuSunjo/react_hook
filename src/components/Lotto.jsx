@@ -76,3 +76,18 @@ const Lotto=() =>{
 }
 
 export default Lotto
+
+//componentDidMount 만 하고 싶다.
+// useEffect(() => {
+//     //ajax
+// }, [])
+
+//componentDidUpdate만 , componentDidMount X
+// const mounted = useRef(false);
+// useEffect(() => {
+//     if(!mounted.current){
+//         mounted.current=true;
+//     }else{
+//         //ajax
+//     }
+// },[바뀌는 값])  
