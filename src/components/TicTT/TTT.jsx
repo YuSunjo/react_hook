@@ -6,6 +6,7 @@ import Table from './Table'
 export const CLICK_CELL='CLICK_CELL'
 export const CHANGE_TURN= 'CHANGE_TURN'
 export const SET_WINNER = 'SET_WINNER'
+export const RESET_GAME = 'RESET_GAME'
 
 const initialState = {
     winner: '',
@@ -41,6 +42,19 @@ const reducer = (state,action) => {
                 turn: state.turn ==='O' ? 'X' : 'O',
             }
         }
+        case RESET_GAME:{
+            return {
+                ...state,
+                tableData:[
+                    ['','',''],
+                    ['','',''],
+                    ['','',''],
+                ],
+                recentCell: [-1,-1]
+            }
+        }
+        default:
+            return state;
             
     }
 }
@@ -78,10 +92,22 @@ function TTT() {
         }
         if(win){
             dispatch({type:SET_WINNER, winner: turn})
+            dispatch({type:RESET_GAME})
         }
         else{
-            //무승부 검사
-            dispatch({type: CHANGE_TURN});
+            let all = true;   //all이 true 무승부
+            tableData.forEach((row) => {    //무승부 검사
+                row.forEach((cell) => {
+                    if(!cell){              //하나라도 안찬게 있으면 무승부가 아님
+                        all = false;
+                    }
+                })
+            })
+            if(all){
+                dispatch({type:RESET_GAME})
+            }else{
+                dispatch({type: CHANGE_TURN});
+            }
         }
     }, [recentCell])
 
