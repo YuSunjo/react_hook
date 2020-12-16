@@ -52,6 +52,7 @@ const Lotto=() =>{
                     //[]에 값을 넣어주지 않으면 계속 바뀌지가 않음 => []에 바꾸어야 하는 값을 넣어준다.
                     //useCallback에 state값을 넣어줄 때 조심...
                     //자식에게 넘길 때는 useCallback을 꼭 해줘야 한다.
+                    //컴포넌트에 있는 함수들은 useCallback 
     const onClickRedo = useCallback(() => {
         console.log('onclickRedo');
         console.log(WinNumbers);

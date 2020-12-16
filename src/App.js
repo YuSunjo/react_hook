@@ -7,12 +7,14 @@ import './components/RSP.css'
 // import Baseball from './components/Baseball'
 // import ResponseCheck from './components/ResponseCheck'
 // import RSP from './components/RSP'
-import Lotto from './components/Lotto'
+// import Lotto from './components/Lotto'
+// import Practice from './components/practice'
+import TTT from './components/TicTT/TTT'
 
 function App() {
   return (
     <div >
-      <Lotto/>
+      <TTT/>
 
     </div>
   );
