@@ -9,12 +9,13 @@ import './components/RSP.css'
 // import RSP from './components/RSP'
 // import Lotto from './components/Lotto'
 // import Practice from './components/practice'
-import TTT from './components/TicTT/TTT'
+// import TTT from './components/TicTT/TTT'
+import MineSearch from './components/MineSearch/MineSearch'
 
 function App() {
   return (
     <div >
-      <TTT/>
+      <MineSearch/>
 
     </div>
   );

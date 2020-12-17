@@ -1,10 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { TableContext } from './MineSearch'
+import Tr from './Tr'
 
-function Table() {
+const Table = () => {
+    const { tableData } = useContext(TableContext)
     return (
-        <div>
-            
-        </div>
+        <table>
+            {Array(tableData.length).fill().map((tr, i) => <Tr rowIndex={i} /> )}
+        </table>
     )
 }
 
