@@ -11,6 +11,7 @@ import './components/RSP.css'
 // import Practice from './components/practice'
 // import TTT from './components/TicTT/TTT'
 import MineSearch from './components/MineSearch/MineSearch'
+import './components/MineSearch/MineSearch.css'
 
 function App() {
   return (
